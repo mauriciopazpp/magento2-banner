@@ -1,7 +1,7 @@
 <?php
 namespace Mauricio\Banner\Block;
 
-class Display extends \Magento\Framework\View\Element\Template
+class Banner extends \Magento\Framework\View\Element\Template
 {
 	public function __construct(
 		\Magento\Framework\View\Element\Template\Context $context,
@@ -21,10 +21,16 @@ class Display extends \Magento\Framework\View\Element\Template
         );
 	}
 
-	public function getBanners()
+	public function getAllBanners()
 	{
 		$collection = $this->_banner->getCollection()
-			->addFieldToFilter('enabled', array('eq' => 1));
-        return $collection;		
+			->addFieldToFilter('enabled', ['eq' => 1]);
+
+        return $collection;
+	}
+
+	public function getImage($banner = null)
+	{
+		return $this->_filterProvider->getPageFilter()->filter($banner->getContent());
 	}
 }
