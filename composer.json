@@ -1,0 +1,11 @@
+{
+    "name": "mauricio/banner-magento2",
+    "description": "Banner Module of Magento 2 created to a Test of Redstage Company job applyment",
+    "authors": [
+        {
+            "name": "Mauricio Paz",
+            "email": "mauriciopazdev@gmail.com"
+        }
+    ],
+    "require": {}
+}
