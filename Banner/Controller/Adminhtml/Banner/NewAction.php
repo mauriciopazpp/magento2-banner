@@ -1,8 +1,17 @@
 <?php
+/**
+ * Mauricio_Banner Banner NewAction Controller
+ * @category  Mauricio
+ * @package   Mauricio_Banner
+ * @author    Mauricio Paz Pacheco
+ */
+
 namespace Mauricio\Banner\Controller\Adminhtml\Banner;
  
 use Magento\Backend\App\Action;
- 
+use \Magento\Backend\App\Action\Context;
+use \Magento\Backend\Model\View\Result\ForwardFactory;
+
 class NewAction extends Action
 {
     /**
@@ -15,8 +24,8 @@ class NewAction extends Action
      * @param \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
      */
     public function __construct(
-        \Magento\Backend\App\Action\Context $context,
-        \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
+        Context $context,
+        ForwardFactory $resultForwardFactory
     ) {
         $this->_resultForwardFactory = $resultForwardFactory;
         parent::__construct($context);

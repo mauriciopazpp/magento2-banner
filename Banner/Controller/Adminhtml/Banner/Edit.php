@@ -1,4 +1,11 @@
 <?php
+/**
+ * Mauricio_Banner Banner Edit Controller
+ * @category  Mauricio
+ * @package   Mauricio_Banner
+ * @author    Mauricio Paz Pacheco
+ */
+
 namespace Mauricio\Banner\Controller\Adminhtml\Banner;
  
 use Magento\Backend\App\Action;

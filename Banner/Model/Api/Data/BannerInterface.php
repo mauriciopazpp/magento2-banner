@@ -1,4 +1,10 @@
 <?php
+/**
+ * Mauricio_Banner Banner Interface
+ * @category  Mauricio
+ * @package   Mauricio_Banner
+ * @author    Mauricio Paz Pacheco
+ */
 
 namespace Mauricio\Banner\Model\Api\Data;
 
@@ -10,6 +16,9 @@ interface BannerInterface
 	const ENABLE = 'enable';
 	const CREATED_AT = 'created_at';
 	const UPDATED_AT = 'updated_at';
+
+	const IS_ENABLE = true;
+	const IS_DISABLED = false;
 
 	public function getId();
 	public function setId($id);

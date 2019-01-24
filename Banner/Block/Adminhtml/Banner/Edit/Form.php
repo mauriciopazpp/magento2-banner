@@ -1,11 +1,17 @@
 <?php
+/**
+ * Mauricio_Banner Banner Form
+ * @category  Mauricio
+ * @package   Mauricio_Banner
+ * @author    Mauricio Paz Pacheco
+ */
+
 namespace Mauricio\Banner\Block\Adminhtml\Banner\Edit;
  
 use \Magento\Backend\Block\Widget\Form\Generic;
  
 class Form extends Generic
 {
- 
     /**
      * @var \Magento\Store\Model\System\Store
      */

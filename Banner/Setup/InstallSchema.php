@@ -1,12 +1,23 @@
 <?php
+/**
+ * Banner Schema Setup
+ * @category  Mauricio
+ * @package   Mauricio_Banner
+ * @author    Mauricio Paz Pacheco
+ */
 
 namespace Mauricio\Banner\Setup;
 
-class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
-{
+use \Magento\Framework\Setup\InstallSchemaInterface;
+use \Magento\Framework\Setup\SchemaSetupInterface;
+use \Magento\Framework\Setup\ModuleContextInterface;
 
-	public function install(\Magento\Framework\Setup\SchemaSetupInterface $setup, \Magento\Framework\Setup\ModuleContextInterface $context)
-	{
+class InstallSchema implements InstallSchemaInterface
+{
+	public function install(
+		SchemaSetupInterface $setup, 
+		ModuleContextInterface $context
+	) {
 		$tableName = 'mauricio_banner_banner';
 
 		$installer = $setup;
@@ -64,17 +75,6 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 				->setComment('Banner Table');
 				
 			$installer->getConnection()->createTable($table);
-
-			$installer->getConnection()->addIndex(
-				$installer->getTable($tableName),
-				$setup->getIdxName(
-					$installer->getTable($tableName),
-					['id', 'content', 'link', 'enable', 'created_at', 'updated_at'],
-					\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
-				),
-				['id', 'content', 'link', 'enable', 'created_at', 'updated_at'],
-				\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
-			);
 		}
 		$installer->endSetup();
 	}

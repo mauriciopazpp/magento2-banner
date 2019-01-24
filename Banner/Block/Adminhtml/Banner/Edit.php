@@ -1,4 +1,11 @@
 <?php
+/**
+ * Mauricio_Banner Banner Edit
+ * @category  Mauricio
+ * @package   Mauricio_Banner
+ * @author    Mauricio Paz Pacheco
+ */
+
 namespace Mauricio\Banner\Block\Adminhtml\Banner;
  
 use Magento\Backend\Block\Widget\Form\Container;

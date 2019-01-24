@@ -1,7 +1,16 @@
 <?php
+/**
+ * Banner Banner Collection
+ * @category  Mauricio
+ * @package   Mauricio_Banner
+ * @author    Mauricio Paz Pacheco
+ */
+
 namespace Mauricio\Banner\Model\ResourceModel\Banner;
 
-class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
+use \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+
+class Collection extends AbstractCollection
 {
 	protected $_idFieldName = 'id';
 	protected $_eventPrefix = 'mauricio_banner_banner_collection';

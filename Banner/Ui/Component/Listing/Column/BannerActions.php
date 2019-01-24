@@ -1,8 +1,11 @@
 <?php
 /**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Mauricio_Banner Banner Action
+ * @category  Mauricio
+ * @package   Mauricio_Banner
+ * @author    Mauricio Paz Pacheco
  */
+
 namespace Mauricio\Banner\Ui\Component\Listing\Column;
  
 use Magento\Framework\View\Element\UiComponent\ContextInterface;

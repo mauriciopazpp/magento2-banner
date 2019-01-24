@@ -1,5 +1,5 @@
 <div class="widget-product-grid">
-	<?php foreach ($block->getAllBanners() as $banner): ?>
+	<?php foreach ($block->getEnableBanners() as $banner): ?>
 		<a href="<?= $banner['url'] ? $banner['url'] : 'javascript:void(0)' ?>">
 			<?php echo $this->getImage($banner); ?>
 		</a>

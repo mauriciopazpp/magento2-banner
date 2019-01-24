@@ -1,3 +1,13 @@
+<!--
+/**
+ * Mauricio_Banner adminhtml ui_component list 
+ *
+ * @category    Mauricio
+ * @package     Mauricio_Banner
+ * @author      Mauricio Paz Pacheco
+ *
+ */
+-->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
        <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -60,6 +70,15 @@
                 </item>
             </argument>
         </column>
+        <column name="link">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">Link</item>
+                </item>
+            </argument>
+        </column>
         <column name="enabled" component="Magento_Ui/js/grid/columns/select">            
             <settings>
                 <options class="Magento\Config\Model\Config\Source\Yesno"/>
@@ -87,8 +106,7 @@
                     <item name="label" xsi:type="string" translate="true">Modified</item>
                 </item>
             </argument>
-        </column>
-         
+        </column>         
         <actionsColumn name="actions" class="Mauricio\Banner\Ui\Component\Listing\Column\BannerActions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

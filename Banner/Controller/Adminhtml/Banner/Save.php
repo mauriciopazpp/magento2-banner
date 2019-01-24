@@ -1,8 +1,17 @@
 <?php
+/**
+ * Mauricio_Banner Banner Save Controller
+ * @category  Mauricio
+ * @package   Mauricio_Banner
+ * @author    Mauricio Paz Pacheco
+ */
+
 namespace Mauricio\Banner\Controller\Adminhtml\Banner;
  
-use Magento\Backend\App\Action;
- 
+use \Magento\Backend\App\Action;
+use \Magento\Backend\App\Action\Context;
+use \Mauricio\Banner\Model\Banner;
+
 class Save extends Action
 {
     /**
@@ -15,8 +24,8 @@ class Save extends Action
      * @param \Maxime\Jobs\Model\Department $model
      */
     public function __construct(
-        Action\Context $context,
-        \Mauricio\Banner\Model\Banner $model
+        Context $context,
+        Banner $model
     ) {
         parent::__construct($context);
         $this->_model = $model;
