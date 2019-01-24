@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mauricio_Banner Frontend layout Homepage 
+ *
+ * @category    Mauricio
+ * @package     Mauricio_Banner
+ * @author      Mauricio Paz Pacheco
+ *
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   	<head>
+        <css src="Mauricio_Banner/css/slick.css" />                
+        <css src="Mauricio_Banner/css/slick-theme.css" /> 
+    </head> 
+    <referenceContainer name="content">
+        <block class="Mauricio\Banner\Block\Banner" name="mauricio_banner_banner_display" template="Mauricio_Banner::banner_listing.phtml" />
+    </referenceContainer>
+</page>

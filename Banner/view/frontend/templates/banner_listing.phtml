@@ -1,0 +1,24 @@
+<div class="widget-product-grid">
+	<?php foreach ($block->getEnableBanners() as $banner): ?>
+		<a href="<?= $banner['url'] ? $banner['url'] : 'javascript:void(0)' ?>">
+			<?php echo $this->getImage($banner); ?>
+		</a>
+	<?php endforeach ?>  
+</div>
+
+<script>
+require([
+        'jquery',
+        'slick'
+    ], function ($) {
+        jQuery(document).ready(function () {
+            jQuery(".widget-product-grid").slick({
+			  dots: true,
+			  infinite: true,
+			  speed: 300,
+			  slidesToShow: 1,
+			  adaptiveHeight: true
+			});
+        });
+    });
+</script>
