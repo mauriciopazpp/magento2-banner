@@ -11,8 +11,7 @@ Clean the cache
 php bin/magento cache:clean
 ```
 Upgrade and compile
+```
 php bin/magento setup:upgrade && php bin/magento setup:di:compile
 ```
-The banner management will be created in the sideba. 
-
-Banner > Homepage Banner
+The banner management will be created in the sideba. `Banner > Homepage Banner`
