@@ -70,7 +70,7 @@ class Form extends Generic
         $fieldset = $form->addFieldset(
             'base_fieldset',
             [
-                'legend' => __('General Information'), 
+                'legend' => __('General Information'),
                 'class' => 'fieldset-wide'
             ]
         );
@@ -83,9 +83,9 @@ class Form extends Generic
             'enabled',
             'select',
             [
-                'name' => 'enabled', 
-                'label' => __('Is The Banner Enabled'), 
-                'title' => __('Is The Banner Enabled'), 
+                'name' => 'enabled',
+                'label' => __('Is The Banner Enabled'),
+                'title' => __('Is The Banner Enabled'),
                 'required' => true,
                 'options' => ['1' => __('Yes'), '0' => __('No')]            ]
         );
@@ -94,9 +94,9 @@ class Form extends Generic
             'link',
             'text',
             [
-                'name' => 'link', 
-                'label' => __('Banner Link'), 
-                'title' => __('Banner Link'), 
+                'name' => 'link',
+                'label' => __('Banner Link'),
+                'title' => __('Banner Link'),
                 'required' => false
             ]
         );
@@ -105,12 +105,12 @@ class Form extends Generic
             'content',
             'editor',
             [
-                'name' => 'content', 
-                'label' => __('Banner Content'), 
-                'title' => __('Banner Content'), 
+                'name' => 'content',
+                'label' => __('Banner Content'),
+                'title' => __('Banner Content'),
                 'required' => true,
                 'wysiwyg' => true,
-                'config' => $this->_wysiwygConfig->getConfig()                
+                'config' => $this->_wysiwygConfig->getConfig()
             ]
         );
  

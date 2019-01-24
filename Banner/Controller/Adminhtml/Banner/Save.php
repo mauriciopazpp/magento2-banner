@@ -52,7 +52,7 @@ class Save extends Action
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($data) {
             /** @var \Maxime\Jobs\Model\Department $model */
-            $model = $this->_model; 
+            $model = $this->_model;
             
            
             if (isset($data['id'])) {

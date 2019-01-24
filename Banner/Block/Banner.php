@@ -16,14 +16,14 @@ use \Magento\Cms\Model\Template\FilterProvider;
 
 class Banner extends Template
 {
-	public function __construct(
-		Context $context,
-		BannerModel $banner,
-		ResourceConnection $resource,
-		FilterProvider $filterProvider,
+    public function __construct(
+        Context $context,
+        BannerModel $banner,
+        ResourceConnection $resource,
+        FilterProvider $filterProvider,
         array $data = []
-	) {
-		$this->_banner = $banner;
+    ) {
+        $this->_banner = $banner;
         $this->_resource = $resource;
         $this->_filterProvider = $filterProvider;
 
@@ -31,20 +31,21 @@ class Banner extends Template
             $context,
             $data
         );
-	}
+    }
 
-	public function getEnableBanners()
-	{
-		$collection = $this->_banner->getCollection()
-			->addFieldToFilter(
-				'enabled', ['=' => BannerModel::IS_ENABLE]
-			);
+    public function getEnableBanners()
+    {
+        $collection = $this->_banner->getCollection()
+            ->addFieldToFilter(
+                'enabled',
+                ['=' => BannerModel::IS_ENABLE]
+            );
 
         return $collection;
-	}
+    }
 
-	public function getImage($banner)
-	{
-		return $this->_filterProvider->getPageFilter()->filter($banner->getContent());
-	}
+    public function getImage($banner)
+    {
+        return $this->_filterProvider->getPageFilter()->filter($banner->getContent());
+    }
 }
