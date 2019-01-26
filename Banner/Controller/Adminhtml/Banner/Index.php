@@ -8,26 +8,17 @@
 
 namespace Mauricio\Banner\Controller\Adminhtml\Banner;
 
-use \Magento\Backend\App\Action;
+use Magento\Framework\Controller\ResultFactory;
+use \Mauricio\Banner\Controller\Banner;
 use \Magento\Backend\App\Action\Context;
 use \Magento\Framework\View\Result\PageFactory;
 
-class Index extends Action
+class Index extends Banner
 {
-    protected $resultPageFactory = false;
-
-    public function __construct(
-        Context $context,
-        PageFactory $resultPageFactory
-    ) {
-        parent::__construct($context);
-        $this->resultPageFactory = $resultPageFactory;
-    }
-
     public function execute()
     {
-        $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('Banners')));
+        $resultPage = $this->context->getResultFactory()->create(ResultFactory::TYPE_PAGE);
+        $resultPage->getConfig()->getTitle()->prepend((('Banners')));
 
         return $resultPage;
     }

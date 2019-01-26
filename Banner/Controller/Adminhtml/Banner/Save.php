@@ -14,15 +14,8 @@ use \Mauricio\Banner\Model\Banner;
 
 class Save extends Action
 {
-    /**
-     * @var \Maxime\Jobs\Model\Department
-     */
     protected $_model;
  
-    /**
-     * @param Action\Context $context
-     * @param \Maxime\Jobs\Model\Department $model
-     */
     public function __construct(
         Context $context,
         Banner $model

@@ -8,19 +8,46 @@
 
 namespace Mauricio\Banner\Model;
 
+use Magento\Framework\Model\AbstractExtensibleModel;
 use \Magento\Framework\Model\AbstractModel;
-use Mauricio\Banner\Model\Api\Data\BannerInterface;
+use Mauricio\Banner\Api\Data\BannerInterface;
 use Magento\Framework\DataObject\IdentityInterface;
+use Mauricio\Banner\Api\Repository\BannerRepositoryInterface;
+use Magento\Framework\Model\Context;
+use Magento\Framework\Registry;
+use Magento\Framework\Api\ExtensionAttributesFactory;
+use Magento\Framework\Api\AttributeValueFactory;
 
-class Banner extends AbstractModel implements IdentityInterface, BannerInterface
+class Banner extends AbstractExtensibleModel implements IdentityInterface, BannerInterface
 {
+    const ENTITY = 'mauricio_banner_banner';
     const CACHE_TAG = 'mauricio_banner_banner';
     protected $_cacheTag = 'mauricio_banner_banner';
     protected $_eventPrefix = 'mauricio_banner_banner';
 
+    public function __construct(
+        BannerRepositoryInterface $bannerRepositoryInterface,
+        Context $context,
+        Registry $registry,
+        ExtensionAttributesFactory $extensionFactory,
+        AttributeValueFactory $customAttributeFactory
+    ) {
+        $this->bannerRepositoryInterface = $bannerRepositoryInterface;
+
+        parent::__construct($context, $registry, $extensionFactory, $customAttributeFactory);
+    }
+
     protected function _construct()
     {
         $this->_init('Mauricio\Banner\Model\ResourceModel\Banner');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getIdentities()
+    {
+        return [self::CACHE_TAG . '_' . $this->getId()];
     }
 
     public function getBannerId()
@@ -81,11 +108,6 @@ class Banner extends AbstractModel implements IdentityInterface, BannerInterface
     public function setUpdatedAt($updatedAt)
     {
         return $this->setData(self::UPDATED_AT, $updatedAt);
-    }
-
-    public function getIdentities()
-    {
-        return [self::CACHE_TAG . '_' . $this->getId()];
     }
 
     public function getDefaultValues()

@@ -7,56 +7,28 @@
  */
 
 namespace Mauricio\Banner\Controller\Adminhtml\Banner;
- 
-use Magento\Backend\App\Action;
- 
-class Delete extends Action
+
+use \Mauricio\Banner\Controller\Adminhtml\Banner;
+
+class Delete extends Banner
 {
-    protected $_model;
- 
-    /**
-     * @param Action\Context $context
-     * @param \Maxime\Jobs\Model\Department $model
-     */
-    public function __construct(
-        Action\Context $context,
-        \Mauricio\Banner\Model\Banner $model
-    ) {
-        parent::__construct($context);
-        $this->_model = $model;
-    }
- 
-    /**
-     * {@inheritdoc}
-     */
-    protected function _isAllowed()
-    {
-        return true;
-    }
- 
-    /**
-     * Delete action
-     *
-     * @return \Magento\Framework\Controller\ResultInterface
-     */
     public function execute()
     {
-        $id = $this->getRequest()->getParam('id');
-        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
+        $model = $this->initModel();
         $resultRedirect = $this->resultRedirectFactory->create();
-        if ($id) {
+
+        if ($model->getId()) {
             try {
-                $model = $this->_model;
-                $model->load($id);
                 $model->delete();
-                $this->messageManager->addSuccess(__('Banner deleted'));
+
+                $this->messageManager->addSuccess(__('The banner has been deleted!'));
                 return $resultRedirect->setPath('*/*/');
             } catch (\Exception $e) {
                 $this->messageManager->addError($e->getMessage());
                 return $resultRedirect->setPath('*/*/edit', ['id' => $id]);
             }
         }
-        $this->messageManager->addError(__('Banner does not exist'));
+        $this->messageManager->addError(__('This banner no longer exists!'));
         return $resultRedirect->setPath('*/*/');
     }
 }
