@@ -7,9 +7,9 @@
  */
 
 namespace Mauricio\Banner\Controller\Adminhtml\Banner;
- 
+
 use Magento\Backend\App\Action;
- 
+
 class Edit extends Action
 {
     /**
@@ -18,17 +18,17 @@ class Edit extends Action
      * @var \Magento\Framework\Registry
      */
     protected $_coreRegistry = null;
- 
+
     /**
      * @var \Magento\Framework\View\Result\PageFactory
      */
     protected $_resultPageFactory;
- 
+
     /**
      * @var \Maxime\Jobs\Model\Department
      */
     protected $_model;
- 
+
     /**
      * @param Action\Context $context
      * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
@@ -46,15 +46,7 @@ class Edit extends Action
         $this->_model = $model;
         parent::__construct($context);
     }
- 
-    /**
-     * {@inheritdoc}
-     */
-    protected function _isAllowed()
-    {
-        return true;
-    }
- 
+
     /**
      * Init actions
      *
@@ -70,7 +62,7 @@ class Edit extends Action
             ->addBreadcrumb(__('Manage Banner'), __('Manage Banner'));
         return $resultPage;
     }
- 
+
     /**
      * Edit Department
      *
@@ -81,7 +73,7 @@ class Edit extends Action
     {
         $id = $this->getRequest()->getParam('id');
         $model = $this->_model;
-    
+
         // If you have got an id, it's edition
         if ($id) {
             $model->load($id);
@@ -89,18 +81,18 @@ class Edit extends Action
                 $this->messageManager->addError(__('This banner does not exist.'));
                 /** \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
- 
+
                 return $resultRedirect->setPath('*/*/');
             }
         }
- 
+
         $data = $this->_getSession()->getFormData(true);
         if (!empty($data)) {
             $model->setData($data);
         }
- 
+
         $this->_coreRegistry->register('mauricio_banner', $model);
- 
+
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->_initAction();
         $resultPage->addBreadcrumb(
@@ -110,7 +102,7 @@ class Edit extends Action
         $resultPage->getConfig()->getTitle()->prepend(__('Banners'));
         $resultPage->getConfig()->getTitle()
             ->prepend($model->getId() ? $model->getName() : __('New Banner'));
- 
+
         return $resultPage;
     }
 }
