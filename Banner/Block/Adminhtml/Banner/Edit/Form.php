@@ -3,7 +3,17 @@
 namespace Mauricio\Banner\Block\Adminhtml\Banner\Edit;
  
 use \Magento\Backend\Block\Widget\Form\Generic;
- 
+use \Magento\Backend\Block\Template\Content;
+use \Magento\Framework\Registry;
+use \Magento\Framework\Data\FormFactory;
+use \Magento\Store\Model\System\Store;
+use \Magento\Cms\Model\Wysiwyg\Config;
+use \Magento\Backend\Block\Widget\Context;
+
+/**
+ * Class Form
+ * @package Mauricio\Banner\Block\Adminhtml\Banner\Edit
+ */
 class Form extends Generic
 {
     /**
@@ -14,19 +24,19 @@ class Form extends Generic
 
     /**
      * Form constructor.
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Framework\Data\FormFactory $formFactory
-     * @param \Magento\Store\Model\System\Store $systemStore
-     * @param \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig
+     * @param Context $context
+     * @param Registry $registry
+     * @param FormFactory $formFactory
+     * @param Store $systemStore
+     * @param Config $wysiwygConfig
      * @param array $data
      */
     public function __construct(
-        \Magento\Backend\Block\Template\Context $context,
-        \Magento\Framework\Registry $registry,
-        \Magento\Framework\Data\FormFactory $formFactory,
-        \Magento\Store\Model\System\Store $systemStore,
-        \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig,
+        Context $context,
+        Registry $registry,
+        FormFactory $formFactory,
+        Store $systemStore,
+        Config $wysiwygConfig,
         array $data = []
     ) {
         $this->registry = $registry;

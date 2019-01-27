@@ -1,17 +1,18 @@
 <?php
-/**
- * Mauricio_Banner Banner Delete Controller
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Controller\Adminhtml\Banner;
 
-use \Mauricio\Banner\Controller\Adminhtml\Banner;
+use Mauricio\Banner\Controller\Adminhtml\Banner;
 
+/**
+ * Class Delete
+ * @package Mauricio\Banner\Controller\Adminhtml\Banner
+ */
 class Delete extends Banner
 {
+    /**
+     * @return mixed
+     */
     public function execute()
     {
         $model = $this->initModel();

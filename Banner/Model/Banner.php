@@ -12,6 +12,10 @@ use Magento\Framework\Registry;
 use Magento\Framework\Api\ExtensionAttributesFactory;
 use Magento\Framework\Api\AttributeValueFactory;
 
+/**
+ * Class Banner
+ * @package Mauricio\Banner\Model
+ */
 class Banner extends AbstractExtensibleModel implements IdentityInterface, BannerInterface
 {
     const ENTITY = 'banners';

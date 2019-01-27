@@ -1,13 +1,3 @@
-<!--
-/**
- * Mauricio_Banner adminhtml ui_component list 
- *
- * @category    Mauricio
- * @package     Mauricio_Banner
- * @author      Mauricio Paz Pacheco
- *
- */
--->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
        <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">

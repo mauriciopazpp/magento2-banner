@@ -1,12 +1,16 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
     <preference for="Mauricio\Banner\Api\Data\BannerInterface" type="Mauricio\Banner\Model\Banner"/>
     <preference for="Mauricio\Banner\Api\Repository\BannerRepositoryInterface" type="Mauricio\Banner\Repository\BannerRepository"/>
-
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
                 <item name="mauricio_banner_banner_listing_data_source" xsi:type="string">Mauricio\Banner\Model\ResourceModel\Banner\Grid\Collection</item>
             </argument>
+        </arguments>
+    </type>
+    <type name="Vendor\Module\Block\Popup">
+        <arguments>
+            <argument name="templateProcessor" xsi:type="object">Magento\Widget\Model\Template\Filter</argument>
         </arguments>
     </type>
     <virtualType name="Mauricio\Banner\Model\ResourceModel\Banner\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">

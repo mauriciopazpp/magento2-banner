@@ -3,7 +3,13 @@
 namespace Mauricio\Banner\Block\Adminhtml\Banner;
  
 use Magento\Backend\Block\Widget\Form\Container;
- 
+use \Magento\Backend\Block\Widget\Context;
+use \Magento\Framework\Registry;
+
+/**
+ * Class Edit
+ * @package Mauricio\Banner\Block\Adminhtml\Banner
+ */
 class Edit extends Container
 {
     /**
@@ -13,24 +19,19 @@ class Edit extends Container
 
     /**
      * Edit constructor.
-     * @param \Magento\Backend\Block\Widget\Context $context
-     * @param \Magento\Framework\Registry $registry
+     * @param Context $context
+     * @param Registry $registry
      * @param array $data
      */
     public function __construct(
-        \Magento\Backend\Block\Widget\Context $context,
-        \Magento\Framework\Registry $registry,
+        Context $context,
+        Registry $registry,
         array $data = []
     ) {
         $this->_coreRegistry = $registry;
         parent::__construct($context, $data);
     }
 
-    /**
-     * Department edit block
-     *
-     * @return void
-     */
     protected function _construct()
     {
         $this->_objectId = 'id';
@@ -66,23 +67,18 @@ class Edit extends Container
             return __('New Banner');
         }
     }
- 
+
     /**
-     * Check permission for passed action
-     *
-     * @param string $resourceId
+     * @param $resourceId
      * @return bool
      */
     protected function _isAllowedAction($resourceId)
     {
         return true;
     }
- 
+
     /**
-     * Getter of url for "Save and Continue" button
-     * tab_id will be replaced by desired by JS later
-     *
-     * @return string
+     * @return mixed
      */
     protected function _getSaveAndContinueUrl()
     {

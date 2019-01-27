@@ -8,6 +8,10 @@ use Mauricio\Banner\Model\Banner;
 use Mauricio\Banner\Model\ResourceModel\Banner\CollectionFactory;
 use Mauricio\Banner\Api\Data\BannerInterfaceFactory;
 
+/**
+ * Class BannerRepository
+ * @package Mauricio\Banner\Repository
+ */
 class BannerRepository implements BannerRepositoryInterface
 {
     /**

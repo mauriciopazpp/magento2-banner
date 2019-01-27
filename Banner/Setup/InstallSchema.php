@@ -1,10 +1,4 @@
 <?php
-/**
- * Banner Schema Setup
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Setup;
 
@@ -12,6 +6,10 @@ use \Magento\Framework\Setup\InstallSchemaInterface;
 use \Magento\Framework\Setup\SchemaSetupInterface;
 use \Magento\Framework\Setup\ModuleContextInterface;
 
+/**
+ * Class InstallSchema
+ * @package Mauricio\Banner\Setup
+ */
 class InstallSchema implements InstallSchemaInterface
 {
     /**

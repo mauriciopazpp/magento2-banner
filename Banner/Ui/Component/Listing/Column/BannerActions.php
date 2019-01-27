@@ -1,10 +1,4 @@
 <?php
-/**
- * Mauricio_Banner Banner Action
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Ui\Component\Listing\Column;
  
@@ -12,9 +6,10 @@ use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Framework\UrlInterface;
- 
+
 /**
- * Class DepartmentActions
+ * Class BannerActions
+ * @package Mauricio\Banner\Ui\Component\Listing\Column
  */
 class BannerActions extends Column
 {
@@ -22,8 +17,9 @@ class BannerActions extends Column
      * @var UrlInterface
      */
     protected $urlBuilder;
- 
+
     /**
+     * BannerActions constructor.
      * @param ContextInterface $context
      * @param UiComponentFactory $uiComponentFactory
      * @param UrlInterface $urlBuilder

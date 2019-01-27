@@ -1,9 +1,21 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<config
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Mauricio_Banner::manager" title="Banners" module="Mauricio_Banner" sortOrder="10" resource="Mauricio_Banner::manager" />
- 
-        <add id="Mauricio_Banner::banner" title="Homepage Banners" module="Mauricio_Banner" sortOrder="0" action="mauricio_banner/banner" parent="Mauricio_Banner::manager" resource="Mauricio_Banner::banner" />
+        <!--First level menu-->
+        <add id="Mauricio_Banner::manager"
+             title="Banners"
+             module="Mauricio_Banner"
+             sortOrder="10" resource="Mauricio_Banner::manager" />
+
+        <!--Second level menu-->
+        <add id="Mauricio_Banner::banner"
+             title="Homepage Banners"
+             module="Mauricio_Banner"
+             sortOrder="0"
+             action="mauricio_banner/banner"
+             parent="Mauricio_Banner::manager"
+             resource="Mauricio_Banner::banner" />
     </menu>
 </config>

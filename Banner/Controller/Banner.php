@@ -9,6 +9,10 @@ use Mauricio\Banner\Api\Data\BannerInterface;
 use Mauricio\Banner\Model\BannerFactory;
 use Magento\Framework\Registry;
 
+/**
+ * Class Banner
+ * @package Mauricio\Banner\Controller
+ */
 abstract class Banner extends Action
 {
     /**

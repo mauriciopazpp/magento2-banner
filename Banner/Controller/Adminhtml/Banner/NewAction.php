@@ -4,10 +4,14 @@ namespace Mauricio\Banner\Controller\Adminhtml\Banner;
 
 use Mauricio\Banner\Controller\Adminhtml\Banner;
 
+/**
+ * Class NewAction
+ * @package Mauricio\Banner\Controller\Adminhtml\Banner
+ */
 class NewAction extends Banner
 {
     /**
-     * {@inheritdoc}
+     * @return mixed
      */
     public function execute()
     {

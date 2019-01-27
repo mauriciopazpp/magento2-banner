@@ -6,8 +6,15 @@ use \Magento\Backend\App\Action;
 use \Magento\Backend\App\Action\Context;
 use Mauricio\Banner\Controller\Adminhtml\Banner;
 
+/**
+ * Class Save
+ * @package Mauricio\Banner\Controller\Adminhtml\Banner
+ */
 class Save extends Banner
 {
+    /**
+     * @return mixed
+     */
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();

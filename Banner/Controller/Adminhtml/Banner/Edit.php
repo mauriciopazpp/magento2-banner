@@ -6,6 +6,10 @@ use Magento\Framework\Controller\ResultFactory;
 use Mauricio\Banner\Api\Data\BannerInterface;
 use Mauricio\Banner\Controller\Adminhtml\Banner;
 
+/**
+ * Class Edit
+ * @package Mauricio\Banner\Controller\Adminhtml\Banner
+ */
 class Edit extends Banner
 {
     /**

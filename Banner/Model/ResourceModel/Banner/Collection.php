@@ -4,6 +4,10 @@ namespace Mauricio\Banner\Model\ResourceModel\Banner;
 
 use \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
+/**
+ * Class Collection
+ * @package Mauricio\Banner\Model\ResourceModel\Banner
+ */
 class Collection extends AbstractCollection
 {
     protected $_idFieldName = 'id';
