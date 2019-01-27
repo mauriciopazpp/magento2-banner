@@ -20,6 +20,11 @@ class BannerRepository implements BannerRepositoryInterface
      */
     private $collectionFactory;
 
+    /**
+     * BannerRepository constructor.
+     * @param BannerInterfaceFactory $factory
+     * @param CollectionFactory $collectionFactory
+     */
     public function __construct(
         BannerInterfaceFactory $factory,
         CollectionFactory $collectionFactory
@@ -29,7 +34,7 @@ class BannerRepository implements BannerRepositoryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @return mixed
      */
     public function getCollection()
     {
@@ -37,7 +42,7 @@ class BannerRepository implements BannerRepositoryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @return mixed
      */
     public function create()
     {
@@ -45,7 +50,8 @@ class BannerRepository implements BannerRepositoryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @param int $id
+     * @return bool|Banner
      */
     public function get($id)
     {
@@ -58,7 +64,8 @@ class BannerRepository implements BannerRepositoryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @param BannerInterface $model
+     * @return mixed
      */
     public function delete(BannerInterface $model)
     {
@@ -67,11 +74,23 @@ class BannerRepository implements BannerRepositoryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @param BannerInterface $model
+     * @return mixed
      */
     public function save(BannerInterface $model)
     {
         /** @var Banner $model */
         return $model->getResource()->save($model);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEnabledBanners()
+    {
+        return $this->factory->addFieldToFilter(
+            'enabled',
+            ['=' => true]
+        );
     }
 }

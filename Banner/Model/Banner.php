@@ -1,10 +1,4 @@
 <?php
-/**
- * Banner Banner Model
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Model;
 
@@ -20,11 +14,19 @@ use Magento\Framework\Api\AttributeValueFactory;
 
 class Banner extends AbstractExtensibleModel implements IdentityInterface, BannerInterface
 {
-    const ENTITY = 'mauricio_banner_banner';
-    const CACHE_TAG = 'mauricio_banner_banner';
-    protected $_cacheTag = 'mauricio_banner_banner';
-    protected $_eventPrefix = 'mauricio_banner_banner';
+    const ENTITY = 'banners';
+    const CACHE_TAG = 'banners';
+    protected $_cacheTag = 'banners';
+    protected $_eventPrefix = 'banners';
 
+    /**
+     * Banner constructor.
+     * @param BannerRepositoryInterface $bannerRepositoryInterface
+     * @param Context $context
+     * @param Registry $registry
+     * @param ExtensionAttributesFactory $extensionFactory
+     * @param AttributeValueFactory $customAttributeFactory
+     */
     public function __construct(
         BannerRepositoryInterface $bannerRepositoryInterface,
         Context $context,
@@ -43,18 +45,25 @@ class Banner extends AbstractExtensibleModel implements IdentityInterface, Banne
     }
 
     /**
-     * {@inheritdoc}
+     * @return array
      */
     public function getIdentities()
     {
         return [self::CACHE_TAG . '_' . $this->getId()];
     }
 
+    /**
+     * @return mixed
+     */
     public function getBannerId()
     {
         return $this->getData(self::ID);
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function setBannerId($id)
     {
         return $this->setData(self::ID, $id);
@@ -65,11 +74,18 @@ class Banner extends AbstractExtensibleModel implements IdentityInterface, Banne
         return $this->getData(self::CONTENT);
     }
 
+    /**
+     * @param $content
+     * @return mixed
+     */
     public function setContent($content)
     {
         return $this->setData(self::CONTENT, $content);
     }
 
+    /**
+     * @return mixed
+     */
     public function getLink()
     {
         return $this->getData(self::LINK);
@@ -80,40 +96,63 @@ class Banner extends AbstractExtensibleModel implements IdentityInterface, Banne
         return $this->setData(self::LINK, $link);
     }
 
+    /**
+     * @return mixed
+     */
     public function getEnable()
     {
         return $this->getData(self::ENABLE);
     }
 
+    /**
+     * @param $enable
+     * @return mixed
+     */
     public function setEnable($enable)
     {
         return $this->setData(self::ENABLE, $enable);
     }
 
+    /**
+     * @return mixed
+     */
     public function getCreatedAt()
     {
         return $this->getData(self::CREATED_AT);
     }
 
+    /**
+     * @param $createdAt
+     * @return mixed
+     */
     public function setCreatedAt($createdAt)
     {
         return $this->setData(self::CREATED_AT, $createdAt);
     }
-    
+
+    /**
+     * @return mixed
+     */
     public function getUpdatedAt()
     {
         return $this->getData(self::CREATED_AT);
     }
 
+    /**
+     * @param $updatedAt
+     * @return mixed
+     */
     public function setUpdatedAt($updatedAt)
     {
         return $this->setData(self::UPDATED_AT, $updatedAt);
     }
 
+    /**
+     * @return array
+     */
     public function getDefaultValues()
     {
         $values = [];
-
         return $values;
     }
 }

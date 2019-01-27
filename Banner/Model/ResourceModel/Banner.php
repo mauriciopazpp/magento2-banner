@@ -1,10 +1,4 @@
 <?php
-/**
- * Banner Banner ResourceModel
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Model\ResourceModel;
 
@@ -21,6 +15,6 @@ class Banner extends AbstractDb
     
     protected function _construct()
     {
-        $this->_init('mauricio_banner_banner', 'id');
+        $this->_init('banners', 'id');
     }
 }

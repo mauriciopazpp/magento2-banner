@@ -1,10 +1,4 @@
 <?php
-/**
- * Mauricio_Banner Banner Interface
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Model\Api\Data;
 

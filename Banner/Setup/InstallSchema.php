@@ -14,11 +14,15 @@ use \Magento\Framework\Setup\ModuleContextInterface;
 
 class InstallSchema implements InstallSchemaInterface
 {
+    /**
+     * @param SchemaSetupInterface $setup
+     * @param ModuleContextInterface $context
+     */
     public function install(
         SchemaSetupInterface $setup,
         ModuleContextInterface $context
     ) {
-        $tableName = 'mauricio_banner_banner';
+        $tableName = 'banners';
 
         $installer = $setup;
         $installer->startSetup();

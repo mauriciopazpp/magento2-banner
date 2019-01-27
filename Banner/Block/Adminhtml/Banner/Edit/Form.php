@@ -1,10 +1,4 @@
 <?php
-/**
- * Mauricio_Banner Banner Form
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Block\Adminhtml\Banner\Edit;
  
@@ -17,12 +11,14 @@ class Form extends Generic
      */
     protected $_systemStore;
     protected $_wysiwygConfig;
- 
+
     /**
+     * Form constructor.
      * @param \Magento\Backend\Block\Template\Context $context
      * @param \Magento\Framework\Registry $registry
      * @param \Magento\Framework\Data\FormFactory $formFactory
      * @param \Magento\Store\Model\System\Store $systemStore
+     * @param \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig
      * @param array $data
      */
     public function __construct(
@@ -50,7 +46,7 @@ class Form extends Generic
         $this->setId('banner_form');
         $this->setTitle(__('Banner Information'));
     }
- 
+
     /**
      * Prepare form
      *

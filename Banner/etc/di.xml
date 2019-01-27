@@ -1,13 +1,3 @@
-<!--
-/**
- * Mauricio_Banner DI 
- *
- * @category    Mauricio
- * @package     Mauricio_Banner
- * @author      Mauricio Paz Pacheco
- *
- */
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
     <preference for="Mauricio\Banner\Api\Data\BannerInterface" type="Mauricio\Banner\Model\Banner"/>
     <preference for="Mauricio\Banner\Api\Repository\BannerRepositoryInterface" type="Mauricio\Banner\Repository\BannerRepository"/>
@@ -21,7 +11,7 @@
     </type>
     <virtualType name="Mauricio\Banner\Model\ResourceModel\Banner\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
-            <argument name="mainTable" xsi:type="string">mauricio_banner_banner</argument>
+            <argument name="mainTable" xsi:type="string">banners</argument>
             <argument name="resourceModel" xsi:type="string">Mauricio\Banner\Model\ResourceModel\Banner</argument>
         </arguments>
     </virtualType>

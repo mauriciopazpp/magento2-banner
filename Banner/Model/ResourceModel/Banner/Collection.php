@@ -1,10 +1,4 @@
 <?php
-/**
- * Banner Banner Collection
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Model\ResourceModel\Banner;
 

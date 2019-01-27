@@ -1,10 +1,4 @@
 <?php
-/**
- * Mauricio_Banner Banner Edit
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Block\Adminhtml\Banner;
  
@@ -13,13 +7,12 @@ use Magento\Backend\Block\Widget\Form\Container;
 class Edit extends Container
 {
     /**
-     * Core registry
-     *
-     * @var \Magento\Framework\Registry
+     * @var \Magento\Framework\Registry|null
      */
     protected $_coreRegistry = null;
- 
+
     /**
+     * Edit constructor.
      * @param \Magento\Backend\Block\Widget\Context $context
      * @param \Magento\Framework\Registry $registry
      * @param array $data
@@ -32,7 +25,7 @@ class Edit extends Container
         $this->_coreRegistry = $registry;
         parent::__construct($context, $data);
     }
- 
+
     /**
      * Department edit block
      *
@@ -61,11 +54,9 @@ class Edit extends Container
             -100
         );
     }
- 
+
     /**
-     * Get header with Department name
-     *
-     * @return \Magento\Framework\Phrase
+     * @return mixed
      */
     public function getHeaderText()
     {

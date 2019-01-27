@@ -1,10 +1,4 @@
 <?php
-/**
- * Mauricio_Banner Banner Index Controller
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Controller\Adminhtml\Banner;
 

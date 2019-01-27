@@ -4,6 +4,10 @@ namespace Mauricio\Banner\Api\Repository;
 
 use Mauricio\Banner\Api\Data\BannerInterface;
 
+/**
+ * Interface BannerRepositoryInterface
+ * @package Mauricio\Banner\Api\Repository
+ */
 interface BannerRepositoryInterface
 {
     /**
