@@ -1,7 +1,11 @@
 # Magento 2 Banner Module
 
 Clone this repository inside src/app/code/Mauricio folder of your magento2 installation
+Enable the module
 
+```
+php ./bin/magento module:enable Mauricio_Banner
+```
 Clean the cache
 ```
 php bin/magento cache:clean
