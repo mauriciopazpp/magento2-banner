@@ -33,6 +33,7 @@ class Form extends Generic
         \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig,
         array $data = []
     ) {
+        $this->registry = $registry;
         $this->_systemStore = $systemStore;
         $this->_wysiwygConfig = $wysiwygConfig;
         parent::__construct($context, $registry, $formFactory, $data);
@@ -57,10 +58,8 @@ class Form extends Generic
      */
     protected function _prepareForm()
     {
-        /** @var \Maxime\Jobs\Model\Department $model */
-        $model = $this->_coreRegistry->registry('mauricio_banner');
+        $model = $this->registry->registry('current_model');
  
-        /** @var \Magento\Framework\Data\Form $form */
         $form = $this->_formFactory->create(
             ['data' => ['id' => 'edit_form', 'action' => $this->getData('action'), 'method' => 'post']]
         );

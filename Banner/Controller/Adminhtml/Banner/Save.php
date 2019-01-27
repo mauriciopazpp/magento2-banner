@@ -8,7 +8,6 @@ use Mauricio\Banner\Controller\Adminhtml\Banner;
 
 class Save extends Banner
 {
-
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();

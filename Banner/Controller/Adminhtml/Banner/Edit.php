@@ -1,107 +1,35 @@
 <?php
-/**
- * Mauricio_Banner Banner Edit Controller
- * @category  Mauricio
- * @package   Mauricio_Banner
- * @author    Mauricio Paz Pacheco
- */
 
 namespace Mauricio\Banner\Controller\Adminhtml\Banner;
 
-use Magento\Backend\App\Action;
+use Magento\Framework\Controller\ResultFactory;
+use Mauricio\Banner\Api\Data\BannerInterface;
+use Mauricio\Banner\Controller\Adminhtml\Banner;
 
-class Edit extends Action
+class Edit extends Banner
 {
     /**
-     * Core registry
-     *
-     * @var \Magento\Framework\Registry
-     */
-    protected $_coreRegistry = null;
-
-    /**
-     * @var \Magento\Framework\View\Result\PageFactory
-     */
-    protected $_resultPageFactory;
-
-    /**
-     * @var \Maxime\Jobs\Model\Department
-     */
-    protected $_model;
-
-    /**
-     * @param Action\Context $context
-     * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
-     * @param \Magento\Framework\Registry $registry
-     * @param \Maxime\Jobs\Model\Department $model
-     */
-    public function __construct(
-        Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory,
-        \Magento\Framework\Registry $registry,
-        \Mauricio\Banner\Model\Banner $model
-    ) {
-        $this->_resultPageFactory = $resultPageFactory;
-        $this->_coreRegistry = $registry;
-        $this->_model = $model;
-        parent::__construct($context);
-    }
-
-    /**
-     * Init actions
-     *
-     * @return \Magento\Backend\Model\View\Result\Page
-     */
-    protected function _initAction()
-    {
-        // load layout, set active menu and breadcrumbs
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
-        $resultPage = $this->_resultPageFactory->create();
-        $resultPage->setActiveMenu('Mauricio_Banner::banner')
-            ->addBreadcrumb(__('Banner'), __('Banner'))
-            ->addBreadcrumb(__('Manage Banner'), __('Manage Banner'));
-        return $resultPage;
-    }
-
-    /**
-     * Edit Department
-     *
-     * @return \Magento\Backend\Model\View\Result\Page|\Magento\Backend\Model\View\Result\Redirect
-     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @return \Mauricio\Backend\Model\View\Result\Page
      */
     public function execute()
     {
-        $id = $this->getRequest()->getParam('id');
-        $model = $this->_model;
 
-        // If you have got an id, it's edition
-        if ($id) {
-            $model->load($id);
-            if (!$model->getId()) {
-                $this->messageManager->addError(__('This banner does not exist.'));
-                /** \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
-                $resultRedirect = $this->resultRedirectFactory->create();
+        /** @var \Mauricio\Backend\Model\View\Result\Page\Interceptor $resultPage */
+        $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
 
-                return $resultRedirect->setPath('*/*/');
-            }
+        $id = $this->getRequest()->getParam(BannerInterface::ID);
+
+        $model = $this->initModel();
+
+        if ($id && !is_array($id) && !$model->getId()) {
+            $this->messageManager->addErrorMessage(__('This banner no longer exists.'));
+
+            return $this->resultRedirectFactory->create()->setPath('*/*/');
         }
 
-        $data = $this->_getSession()->getFormData(true);
-        if (!empty($data)) {
-            $model->setData($data);
-        }
-
-        $this->_coreRegistry->register('mauricio_banner', $model);
-
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
-        $resultPage = $this->_initAction();
-        $resultPage->addBreadcrumb(
-            $id ? __('Edit Banner') : __('New Banner'),
-            $id ? __('Edit Banner') : __('New Banner')
+        $this->initPage($resultPage)->getConfig()->getTitle()->prepend(
+            $model->getName() ? $model->getName() : __('New Banner')
         );
-        $resultPage->getConfig()->getTitle()->prepend(__('Banners'));
-        $resultPage->getConfig()->getTitle()
-            ->prepend($model->getId() ? $model->getName() : __('New Banner'));
 
         return $resultPage;
     }

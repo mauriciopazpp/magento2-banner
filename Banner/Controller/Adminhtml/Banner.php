@@ -65,6 +65,7 @@ abstract class Banner extends Action
     public function initModel()
     {
         $model = $this->bannerRepository->create();
+
         $id = $this->getRequest()->getParam(BannerInterface::ID);
 
         if ($id && !is_array($id)) {
