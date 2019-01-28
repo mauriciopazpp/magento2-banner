@@ -1,4 +1,4 @@
-![Magento 2](https://lh3.googleusercontent.com/Q759Gj0a7Mpkukz7ptUoxOeXRF3oyuXAPM5uA0yZ-_9xm-s7h8xB9Ua84Rmdk20QN40P6QhDkb-NsVw3fuFr=w1920-h981-rw)
+![Magento 2](https://lh3.googleusercontent.com/SXrxLhsXKgPl95DTw78lpn-zfEfW9ovumbHjPv2jK6fHOjJel9tuW_xj_JeF8vRF-BYlhMgy0OqSDw=w1920-h979-rw)
 
 # WYSIWYG Banner Module - Magento 2
 
