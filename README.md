@@ -32,7 +32,7 @@
   chown -R :www-data .
   ```
 ##
-The banner management will be appears in the sidebar. `Banner > Homepage Banner`
+The banner management will be appears in the sidebar. `Banners > Homepage Banner`
 
 ![Magento 2](https://lh6.googleusercontent.com/z_bgsse6Oh9KNmO3_N4ONtSNl7rSQaMzqvKk-jACcObKzyLATGVvNd__HQJajlNDYTWIXPr5vpvRl2ROZOtf=w1920-h981)
 
