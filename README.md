@@ -34,7 +34,7 @@
 ##
 The banner management will be appears in the sidebar. `Banners > Homepage Banner`
 
-![Magento 2](https://lh6.googleusercontent.com/z_bgsse6Oh9KNmO3_N4ONtSNl7rSQaMzqvKk-jACcObKzyLATGVvNd__HQJajlNDYTWIXPr5vpvRl2ROZOtf=w1920-h981)
+![Magento 2](https://lh6.googleusercontent.com/YDx5bX5mEgqxH0rqsQDeEQGcbvdGV0Q9htWSEDOaGeo99K0fRDpuQgPlw4nFrK4O5RgrSdIQZZWx6LkQa56b=w1920-h979)
 
 That's it.
 
