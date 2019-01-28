@@ -11,7 +11,6 @@
 - Add multiple banners
 
 ## How to install:
-  ### Method 1
   Run this command on the 'root of your magento installation':
   ```git
   git clone git@github.com:mauriciopazpp/magento2-banner.git src/magento/app/code/Mauricio
