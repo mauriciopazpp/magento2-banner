@@ -1,6 +1,6 @@
 ![Magento 2](https://lh3.googleusercontent.com/Q759Gj0a7Mpkukz7ptUoxOeXRF3oyuXAPM5uA0yZ-_9xm-s7h8xB9Ua84Rmdk20QN40P6QhDkb-NsVw3fuFr=w1920-h981-rw)
 
-# WYSIWYG Banner Module! - Magento 2
+# WYSIWYG Banner Module - Magento 2
 
 ## Compatibility
 - Magento 2.0, 2.1, 2.2, 2.3.
